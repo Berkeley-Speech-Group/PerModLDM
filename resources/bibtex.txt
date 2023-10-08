@@ -1,6 +1,6 @@
-@inproceedings{author20XXtitle,
-  title={Please cite me},
-  author={Author, First and Author, Second and Author, Third},
-  booktitle={Conference},
-  year={20XX}
+@inproceedings{netzorg2023permod,
+  title={PerMod: Perceptually Grounded Voice Modification with Latent Diffusion Models},
+  author={Netzorg, Robin and Jalal, Ajil and McNulty, Luna and Anumanchipalli, Gopala},
+  booktitle={Workshop on Automatic Speech Recognition and Understanding (ASRU)},
+  year={2023}
 }
