@@ -208,20 +208,56 @@
 
 	<table align=center width=850px>
 		<center><h1>Demo</h1></center>
+		<center><p>Below we provide examples of voice modification (VM) performed by PerMod on test samples from the Voice Cloning Toolkit (VCTK) and 
+			the Perceptual Voice Qualities Database (PVQD). For comparison, we also provide voice conversion (VC) examples generated from the DSVAE.
+		</p></center>
 		<tr>
+
 			<th>Task</th>
-			<th>Model</th>
 			<th>Input Speech</th>
 			<th>Target Speech</th>
-			<th>Generated Speech</th>
+			<th>DSVAE (VC)</th>
+			<th>PerMod-Pretrained (VM)</th>
+			<th>PerMod-Finetuned (VM)</th>
 		</tr>
 		
 		<tr>
 			<td>Typical-to-Typical</td>
-			<td>PerMod-Pretrained</td>
+			<td><audio><source src="./resources/ground_truth/p293_386_mic1.flac" type="audio/flac"></audio></td>
+			<td><audio><source src="./resources/ground_truth/p225_110_mic1.flac" type="audio/flac"></audio></td>
+			<td><audio><source src="./resources/audios/dsvae/dsvae_target_p225_110_mic1_16k_source_p293_386_mic1_16k_00.wav" type="audio/wav"></td>
+			<td><audio><source src="./resources/audios/pretrained/vctkrf_target_p225_110_mic1_16k_source_p293_386_mic1_16k_10.wav", type="audio/wav"></audio></td>
+			<td><audio><source src="./resources/audios/pretrained/vctkrf_finetuned_target_p225_110_mic1_16k_source_p293_386_mic1_16k_10.wav", type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>Typical-to-Atypical</td>
+			<td>Speaker 1</td>
+			<td>Speaker 2</td>
+			<td>DSVAE</td>
 			<td>VCTK 1</td>
 			<td>VCTK 2</td>
 		</tr>
+
+		<tr>
+			<td>Atypical-to-Typical</td>
+			<td>Speaker 1</td>
+			<td>Speaker 2</td>
+			<td>DSVAE</td>
+			<td>VCTK 1</td>
+			<td>VCTK 2</td>
+		</tr>
+
+		<tr>
+			<td>Atypical-to-Atypical</td>
+			<td>Speaker 1</td>
+			<td>Speaker 2</td>
+			<td>DSVAE</td>
+			<td>VCTK 1</td>
+			<td>VCTK 2</td>
+		</tr>
+
+
 	</table>
 
 	<!-- <hr>
