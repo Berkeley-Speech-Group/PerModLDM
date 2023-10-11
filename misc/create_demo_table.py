@@ -35,11 +35,11 @@ sources = ["p293_386_mic1.flac", "p317_188_mic1_16k.flac", "p259_277_mic1_16k.fl
 source_letter = [getLetter(x) for x in sources]
 
 
-ground_truth_files = os.listdir("../resources/audios/ground_truth")
+ground_truth_files = os.listdir("./resources/audios/ground_truth")
 
 # Generate all the paths
-gt_path = "../resources/audios/ground_truth"
-audio_path = "../resources/audios/"
+gt_path = "./resources/audios/ground_truth"
+audio_path = "./resources/audios/"
 local_dsvae = os.path.join(audio_path, "dsvae")
 local_pretrained = os.path.join(audio_path, "pretrained")
 local_finetuned = os.path.join(audio_path, "finetuned")
@@ -131,6 +131,6 @@ for task_name in task_list:
 	<td><audio controls><source src="%s" type="audio/wav"></audio></td>
 </tr>\n\n""" % (source, target, dsvae, pretrained, finetuned)
 
-with open("./table.html", "w") as table_file:
+with open("./misc/table.html", "w") as table_file:
     table_file.write(table_string)
 
