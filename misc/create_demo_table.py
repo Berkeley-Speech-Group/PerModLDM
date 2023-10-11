@@ -29,6 +29,28 @@ def formatFile(file_name):
 
     return form_file
 
+# Reformat ground truth files
+def reformatFile(file_name):
+    if "SJ5002" in file_name:
+        file_name = file_name + "_hit.wav"
+        return file_name
+    if "SJ6005" in file_name:
+        return file_name + "_away.wav"
+    if "PT008" in file_name:
+        return file_name + "_hit.wav"
+    if "PT019" in file_name:
+        return file_name + "_eggs.wav"
+
+    # VCTK ones
+    if "p293_386_mic1" in file_name:
+        file_name = file_name.split("_")[:-1]
+        return "_".join(file_name) + ".flac"
+    if "p225_110_mic1" in file_name:
+        file_name = file_name.split("_")[:-1]
+        return "_".join(file_name) + ".flac"
+
+    else:
+        return file_name + ".flac"
 
 
 sources = ["p293_386_mic1.flac", "p317_188_mic1_16k.flac", "p259_277_mic1_16k.flac", "PT019_eggs.wav", "PT008_hit.wav"]
@@ -117,11 +139,16 @@ for task_name in task_list:
     sub_df = demo_df[demo_df["task"] == task_sub_name]
 
     for row in sub_df.iterrows():
-        source = os.path.join(gt_path, row[1]["source"])
-        target = os.path.join(gt_path, row[1]["target"]) 
+        # For source and target, reconvert to original file name and add extension
+        source = os.path.join(gt_path, reformatFile(row[1]["source"]))
+        target = os.path.join(gt_path, reformatFile(row[1]["target"]))
         dsvae = os.path.join(local_dsvae, row[1]["dsvae"])
         pretrained = os.path.join(local_pretrained, row[1]["pretrained"])
         finetuned = os.path.join(local_finetuned, row[1]["finetuned"])
+
+        assert os.path.exists(dsvae)
+        assert os.path.exists(pretrained)
+        assert os.path.exists(finetuned)
 
         table_string += """<tr>
 	<td><audio controls><source src="%s" type="audio/flac"></audio></td>
