@@ -161,22 +161,22 @@
 				<tr>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="">Robin Netzorg</a></span>
+							<span style="font-size:24px"><a href="https://robbizorg.github.io/">Robin Netzorg</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="">Ajil Jalal</a></span>
+							<span style="font-size:24px"><a href="https://ajiljalal.github.io/">Ajil Jalal</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="">Luna McNulty</a></span>
+							<span style="font-size:24px"><a href="https://lmcnulty.me/">Luna McNulty</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="">Gopala Anumanchipalli</a></span>
+							<span style="font-size:24px"><a href="https://people.eecs.berkeley.edu/~gopala/">Gopala Anumanchipalli</a></span>
 						</center>
 					</td>
 				</tr>
@@ -219,6 +219,52 @@
 				Perceptual modification of voice is an elusive goal. 
 				While non-experts can modify an image or sentence perceptually with available tools, it is not clear how to similarly modify speech along perceptual axes. Voice conversion does make it possible to convert one voice to another, but these modifications are handled by black box models, and the specifics of what perceptual qualities to modify how to modify them are unclear. Towards allowing greater perceptual control over voice, we introduce PerMod, a conditional latent diffusion model that takes in an input voice and a perceptual qualities vector, and produces a voice with the matching perceptual qualities. Unlike prior work, PerMod generates a new voice corresponding to perceptual modifications. Evaluating perceptual quality vectors with RMSE from both human and predicted labels, we demonstrate that PerMod produces voices with the desired perceptual qualities for typical voices, but performs poorly on atypical voices.
 			</td>
+		</tr>
+	</table>
+	<br>
+
+	<table align=center width=850px>
+		<center><h1>Perceptual Qualities</h1></center>
+		<center><p>Thought of as the acoustic "coloring" of an individual's voice, perceptual qualities are one way that clinicians and voice experts conceptualize
+			the subjective perception of a voice. Here, we provide examples of the CAPE-V perceptual qualities we use in our work. For a description of the gendered 
+			perceptual qualities of resonance and weight, we recommend taking a look over voice examples from the 
+			<a href="https://wiki.sumianvoice.com/wiki/pages/voice-examples/">Voice Resource Repository</a> by SumianVoice. 
+		</p></center>
+
+		<tr>
+			<th>Perceptual Quality</th>
+			<th>Description</th>
+			<th>Audio Example</th>
+		</tr>
+
+		<tr>
+			<td>Strain</td>
+			<td>Perception of excessive vocal effort (hyperfunction)</td>
+			<td><audio controls><source src="./resources/audios/examples/pt0015_strain.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>Loudness</td>
+			<td>Deviation in perceived loudness typical for that speaker's age and gender. </td>
+			<td><audio controls><source src="./resources/audios/examples/pt008_loud.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>Roughness</td>
+			<td>Perceived irregularity in the voicing source.</td>
+			<td><audio controls><source src="./resources/audios/examples/pt014_rough.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>Breathiness</td>
+			<td>Audible air escape in the voice.</td>
+			<td><audio controls><source src="./resources/audios/examples/pt118_breath.wav" type="audio/wav"></audio></td>
+		</tr>
+
+		<tr>
+			<td>Pitch</td>
+			<td>Deviation in pitch values typical for that speaker's age and gender. </td>
+			<td><audio controls><source src="./resources/audios/examples/pt019_pitch.wav" type="audio/wav"></audio></td>
 		</tr>
 	</table>
 	<br>
